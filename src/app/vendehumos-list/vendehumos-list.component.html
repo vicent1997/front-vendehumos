@@ -1,1 +1,11 @@
 <p>vendehumos-list works!</p>
+<div *ngFor="let vendehumo from vendehumos">
+    <h3>{{vendehumo.nombre}}</h3>
+    <img [src]= "vendehumo.urlImagen" width="500" height="600">    
+    <p>Descripcion: {{vendehumo.descripcion | slice:100}}</p>
+    <p>Categorias:</p>
+    <ul *ngIf="vendehumo.categorias">
+        <li *ngFor="let cat from vendehumo.categorias">{{cat}}</li>
+    </ul>
+    <p>Votos: {{vendehumo.votadoPor.length}}</p>
+</div>
